@@ -1,3 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Explora&display=swap');
+
+/*  */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+
+:root {
+  --warna-1: #242C3B;
+  --font2: "Ubuntu Mono", monospace;
+  --font3: "Explora", serif;
+}
+
 *,
 *::after,
 *::before {
@@ -27,29 +41,25 @@ body {
   background-size: cover;
 }
 
-.container::before {
-  content: ''; 
-  background-color: red;
-  background-image: url(./assets/coding-background.jpg);
-  background-position: center;
-  background-size: cover;
-  filter: blur(1rem);
-}
-
 div.container {
   position: relative;
-  background-color: rgb(204, 252, 248);
+  background-color: var(--warna-1);
   width: 600px;
   height: 100vh;
 }
 
 .beranda header {
-  background-color: #d3d3d3;
+  background-color: var(--warna-1);
   padding: 25px;
+  color: rgb(98, 161, 153);
+  font-family: "Concert One", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.2rem;
 }
 
 .beranda .deskripsi-menu {
-  background-color: aquamarine;
+  background-color: rgb(174, 234, 240);
   margin: 20px;
   height: 60px;
   border-radius: 20px;
@@ -85,13 +95,13 @@ div.container {
   * {
     /* border: 1px solid black; */
     width: 100%;
-    padding: 5px; 
+    padding: 5px;
     display: flex;
     justify-content: start;
     align-items: center;
   }
   span {
-    height: 40%;
+    height: 35%;
     i {
       display: flex;
       justify-content: center;
@@ -100,7 +110,7 @@ div.container {
       color: white;
       border: 1px solid grey;
       border-radius: 10px;
-      width: 25%;
+      width: 3.5rem;
       height: 100%;
       font-size: 30px;
       font-weight: bold;
@@ -109,6 +119,7 @@ div.container {
   }
   h3 {
     height: 20%;
+    font-family: var(--font2);
   }
   .keterangan-hutang,
   .keterangan-piutang {
@@ -116,7 +127,7 @@ div.container {
     height: 25%;
     font-style: italic;
   }
-  .deskripsi-hutang, 
+  .deskripsi-hutang,
   .deskripsi-piutang {
     height: 15%;
     font-weight: bold;
@@ -146,14 +157,15 @@ footer.footer-menu ul li {
   padding: 10px;
 }
 
-footer.footer-menu ul a { 
+footer.footer-menu ul a {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  i, span {
-    height: 50%; 
+  i,
+  span {
+    height: 50%;
   }
 }
 
@@ -161,4 +173,16 @@ footer.footer-menu ul li:hover,
 footer.footer-menu ul li:hover a {
   background-color: bisque;
   color: rgb(46, 46, 46);
+}
+
+/* Breakpoints */
+
+@media screen and (max-width: 546px) {
+  .beranda aside {
+    flex-direction: column;
+    .container-hutang,
+    .container-piutang {
+      width: 100%;
+    }
+  }
 }
