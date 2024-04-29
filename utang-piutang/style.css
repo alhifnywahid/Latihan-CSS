@@ -1,0 +1,164 @@
+*,
+*::after,
+*::before {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+* {
+  /* border: 1px solid black; */
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: grey;
+}
+
+body {
+  /* font-family: ; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(./assets/coding-background.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.container::before {
+  content: ''; 
+  background-color: red;
+  background-image: url(./assets/coding-background.jpg);
+  background-position: center;
+  background-size: cover;
+  filter: blur(1rem);
+}
+
+div.container {
+  position: relative;
+  background-color: rgb(204, 252, 248);
+  width: 600px;
+  height: 100vh;
+}
+
+.beranda header {
+  background-color: #d3d3d3;
+  padding: 25px;
+}
+
+.beranda .deskripsi-menu {
+  background-color: aquamarine;
+  margin: 20px;
+  height: 60px;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.beranda aside {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  margin: 20px;
+}
+
+.container-hutang,
+.container-piutang {
+  background-color: white;
+  width: 50%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.container-hutang,
+.container-piutang {
+  * {
+    /* border: 1px solid black; */
+    width: 100%;
+    padding: 5px; 
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+  span {
+    height: 40%;
+    i {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: grey;
+      color: white;
+      border: 1px solid grey;
+      border-radius: 10px;
+      width: 25%;
+      height: 100%;
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+  h3 {
+    height: 20%;
+  }
+  .keterangan-hutang,
+  .keterangan-piutang {
+    font-size: 14px;
+    height: 25%;
+    font-style: italic;
+  }
+  .deskripsi-hutang, 
+  .deskripsi-piutang {
+    height: 15%;
+    font-weight: bold;
+  }
+}
+
+footer.footer-menu {
+  position: absolute;
+  width: 100%;
+  height: 65px;
+  bottom: 0;
+  box-shadow: 0px -1px 6px black;
+}
+
+footer.footer-menu ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+footer.footer-menu ul li {
+  height: 65px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  width: 20%;
+  padding: 10px;
+}
+
+footer.footer-menu ul a { 
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  i, span {
+    height: 50%; 
+  }
+}
+
+footer.footer-menu ul li:hover,
+footer.footer-menu ul li:hover a {
+  background-color: bisque;
+  color: rgb(46, 46, 46);
+}

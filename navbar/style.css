@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Jersey+25&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* .montserrat-<uniquifier> {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.jersey-25-regular {
+  font-family: "Jersey 25", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+} */
+
+*,
+*::after,
+*::before {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+* {
+  /* border: 1px solid black; */
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+
+.nav {
+  background-color: cadetblue;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* position: relative; */
+  left: 0;
+  right: 0;
+  z-index: 5;
+}
+
+h2.title {
+  font-family: "Jersey 25", sans-serif;
+  color: rgb(51, 51, 51);
+  font-size: 2.5rem;
+  width: 25%;
+}
+
+ul {
+  display: flex;
+  width: 50%;
+  justify-content: end;
+  column-gap: 15px;
+}
+
+ul li {
+  list-style: none;
+  transition: all 1s ease;
+}
+
+ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+ul li a:hover {
+  color: rgb(179, 179, 179);
+}
+
+ul li:last-child {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul li:last-child input {
+  display: none;
+  opacity: 1;
+  position: absolute;
+  z-index: 1;
+}
+
+ul li:last-child label {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+ul li:last-child div {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border: 1px solid black;
+  padding: 1.5px;
+  border-radius: 10px;
+  width: 40px;
+  height: 18px;
+}
+
+ul li:last-child span {
+  border-radius: 50%;
+  display: block;
+  background-color: black;
+  width: 35%;
+  height: 100%;
+  margin-right: 0;
+}
+
+ul li:last-child input:checked ~ div {
+  justify-content: end;
+}
+
+div.toogle {
+  display: none;
+  flex-direction: column;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  width: 35px;
+  height: 25px;
+}
+
+.toogle span {
+  width: 100%;
+  height: 5px;
+  border-radius: 5px;
+  background-color: black;
+  transition: 0.5s ease-in-out;
+  transform-origin: center;
+}
+
+.toogle input {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  bottom: -5px;
+  right: -5px;
+  padding: 0px;
+  opacity: 0;
+  z-index: 2;
+}
+
+.toogle input:checked ~ span:nth-child(3) {
+  transform: scale(0);
+}
+
+.toogle input:checked ~ span:nth-child(2) {
+  transform: scaleX(1) translateY(10px) rotate(45deg);
+}
+
+.toogle input:checked ~ span:nth-child(4) {
+  transform: scaleX(1) translateY(-10px) rotate(-45deg);
+}
+
+ul.slide {
+  transform: translateY(0);
+  transition: transform 1s;
+}
+
+.dark {
+  background-color: rgb(61, 107, 109);
+}
+
+h2.dark {
+  color: rgb(167, 167, 167);
+}
+/* DarkMode */
+
+/* Breakpoints */
+
+/* Large */
+/* @media screen and (max-width: 1200px) {
+
+  ul {
+    width: 40%;
+    background-color: red;
+  }
+} */
+
+/* Laptop */
+@media screen and (max-width: 992px) {
+  body {
+    background-color: rgb(222, 135, 164);
+  }
+}
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+  body {
+    background-color: rgb(145, 222, 135);
+  }
+}
+
+/* Phones */
+@media screen and (max-width: 600px) {
+  body {
+    background-color: burlywood;
+  }
+
+  div.nav {
+    justify-content: space-between;
+    padding: 0 15px;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    width: 70%;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    justify-content: space-evenly; 
+    right: 0px;
+    top: 0px;
+    width: 50%;
+    height: 70vh;
+    background-color: dodgerblue;
+    z-index: -1;
+    border-bottom-left-radius: 15px;
+    padding-top: 50px;
+    transform: translateY(-1000px);
+  }
+
+  ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box; 
+    height: 50px;
+  }
+
+  ul li:hover {
+    a {
+      color: white;
+    }
+    background-color: red;
+  }
+
+  div.toogle {
+    display: flex;
+  }
+}
