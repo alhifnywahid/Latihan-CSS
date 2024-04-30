@@ -1,15 +1,105 @@
-@import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Explora&display=swap');
+/* 
+.poppins-thin {
+  font-weight: 100;
+  font-style: normal;
+}
 
-/*  */
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+.poppins-thin-italic {
+  font-weight: 100;
+  font-style: italic;
+}
 
+.poppins-extralight {
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-extralight-italic {
+  font-weight: 200;
+  font-style: italic;
+}
+
+.poppins-light {
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-light-italic {
+  font-weight: 300;
+  font-style: italic;
+}
+
+.poppins-regular {
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-regular-italic {
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium {
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-medium-italic {
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold {
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-semibold-italic {
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold {
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-bold-italic {
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-extrabold {
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-extrabold-italic {
+  font-weight: 800;
+  font-style: italic;
+}
+
+.poppins-black {
+  font-weight: 900;
+  font-style: normal;
+}
+
+.poppins-black-italic {
+  font-weight: 900;
+  font-style: italic;
+} */
 
 :root {
-  --warna-1: #242C3B;
-  --font2: "Ubuntu Mono", monospace;
-  --font3: "Explora", serif;
+  --warna-1: #242c3b;
+  --font-poppins-bold: "Poppins", sans-serif;
+
+  --font-color1: #ffffff;
+  --font-color2: #fafeff;
+
+  --linier1-start: #34c8e8;
+  --linier2-end: #4e4af2;
 }
 
 *,
@@ -23,6 +113,7 @@
 
 * {
   /* border: 1px solid black; */
+  font-family: var(--font-poppins-bold);
 }
 
 a {
@@ -32,13 +123,13 @@ a {
 }
 
 body {
-  /* font-family: ; */
   display: flex;
   justify-content: center;
   align-items: center;
   background-image: url(./assets/coding-background.jpg);
   background-position: center;
   background-size: cover;
+  color: var(--font-color1);
 }
 
 div.container {
@@ -48,25 +139,55 @@ div.container {
   height: 100vh;
 }
 
-.beranda header {
+.section-absolute {
+  position: absolute;
+}
+
+section.section-absolute {
   background-color: var(--warna-1);
-  padding: 25px;
-  color: rgb(98, 161, 153);
-  font-family: "Concert One", sans-serif;
-  font-weight: 600;
+  width: 100%;
+}
+
+h1.judul {
+  font-family: var(--font-poppins-bold);
+  font-weight: 700;
   font-style: normal;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
+  font-style: normal;
+  padding-bottom: 0.6rem;
+}
+
+:target {
+  z-index: 1;
+}
+
+/* STYLE AWAL BERANDA */
+
+section {
+  background-color: var(--warna-1);
+  height: 100%;
+}
+
+.beranda header {
+  margin: 1rem;
 }
 
 .beranda .deskripsi-menu {
   background-color: rgb(174, 234, 240);
-  margin: 20px;
+  font-family: var(--font-poppins-bold);
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-align: center;
+  margin: 1rem;
   height: 60px;
-  border-radius: 20px;
   padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
+  background: linear-gradient(149deg, #34c8e8 0%, #4e4af2 100%);
+  border-radius: 10px;
+  border: 1px rgba(255, 255, 255, 0.6) solid;
 }
 
 .beranda aside {
@@ -74,13 +195,21 @@ div.container {
   justify-content: space-around;
   align-items: center;
   gap: 20px;
-  margin: 20px;
+  margin: 1rem;
+  flex-direction: column;
 }
 
 .container-hutang,
 .container-piutang {
-  background-color: white;
-  width: 50%;
+  background: linear-gradient(
+    169deg,
+    rgba(53.16, 63.01, 83.94, 0.6) 0%,
+    rgba(33.62, 39.77, 52.06, 0.6) 100%
+  );
+  border-radius: 20px;
+  border: 2px rgba(255, 255, 255, 0.2) solid;
+  backdrop-filter: blur(100px);
+  width: 100%;
   height: 200px;
   display: flex;
   flex-direction: column;
@@ -106,40 +235,49 @@ div.container {
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: grey;
-      color: white;
-      border: 1px solid grey;
-      border-radius: 10px;
       width: 3.5rem;
       height: 100%;
       font-size: 30px;
       font-weight: bold;
       text-align: center;
+      color: white;
+      background: linear-gradient(149deg, #34c8e8 0%, #4e4af2 100%);
+      border-radius: 10px;
+      border: 1px rgba(255, 255, 255, 0.6) solid;
     }
   }
   h3 {
     height: 20%;
-    font-family: var(--font2);
+    font-family: var(--font-poppins-bold);
+    font-weight: 600;
+    font-size: 1.5rem;
   }
   .keterangan-hutang,
   .keterangan-piutang {
-    font-size: 14px;
+    font-family: var(--font-poppins-bold);
+    font-weight: 100;
+    font-size: 0.7rem;
     height: 25%;
     font-style: italic;
   }
   .deskripsi-hutang,
   .deskripsi-piutang {
+    font-family: var(--font-poppins-bold);
     height: 15%;
     font-weight: bold;
   }
 }
 
 footer.footer-menu {
+  /* opacity: .0; */
   position: absolute;
   width: 100%;
   height: 65px;
   bottom: 0;
   box-shadow: 0px -1px 6px black;
+  border-radius: 20px 15px 0 0;
+  background-color: var(--warna-1);
+  z-index: 5;
 }
 
 footer.footer-menu ul {
@@ -153,27 +291,177 @@ footer.footer-menu ul li {
   list-style: none;
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 20%;
   padding: 10px;
 }
 
 footer.footer-menu ul a {
+  position: relative;
+  top: -2;
+  transition: 0.3s ease;
+  border-radius: 1rem 0;
+  height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  i,
-  span {
+  i {
+    transition: 0.5s ease-in-out;
+    position: absolute;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 50%;
+    font-size: 1.3rem;
+    width: 100%;
   }
 }
 
-footer.footer-menu ul li:hover,
 footer.footer-menu ul li:hover a {
-  background-color: bisque;
-  color: rgb(46, 46, 46);
+  color: #ffffff;
+  border: 1px rgba(255, 255, 255, 0.6) solid;
+  background: linear-gradient(149deg, #34c8e8 0%, #4e4af2 100%);
+  /* transform: translateY(-3rem); */
 }
+
+section.hutang {
+  width: 100%;
+  padding: 0px 1rem;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  * {
+    width: 100%;
+  }
+}
+
+.hutang .deskripsi-menu {
+  margin: 0rem 0 0.5rem 0;
+}
+
+.inti-deskripsi {
+  font-weight: 600;
+  font-size: large;
+}
+
+#hutang * {
+  /* border: 1px solid black; */
+}
+
+.hutang aside {
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+div.container-list {
+  overflow-y: scroll;
+  /* border: 1px solid black; */
+  height: 100%;
+}
+
+div.container-list-item {
+  margin-bottom: .5rem;
+  background: linear-gradient(
+    169deg,
+    rgba(53.16, 63.01, 83.94, 0.6) 0%,
+    rgba(33.62, 39.77, 52.06, 0.6) 100%
+  ); 
+  border-radius: 0.7rem;
+  border: 2px rgba(255, 255, 255, 0.2) solid;
+  backdrop-filter: blur(100px);
+  padding: 10px 10px;
+  * {
+    /* border: 1px solid black; */
+  }
+}
+
+.list-header { 
+  height: 4rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  h3 {
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  .icon {
+    width: max-content;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    position: relative;
+    a {
+      color: var(--linier2-end);
+      width: max-content;
+      position: absolute;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.tanggal {
+  font-weight: 200;
+  font-size: .8rem;
+}
+
+.container-rincian {
+  display: flex; 
+  gap: .4rem;
+  .container-jumlah,
+  .container-dibayar,
+  .container-sisa { 
+    border-radius: 10px;
+    font-weight: 300;
+    font-size: .8rem;
+    padding: .5rem;
+    background: linear-gradient(327deg, #363e51 0%, #4c5770 100%);
+    border-radius: .5rem;
+    border: 1px rgba(255, 255, 255, 0.2) solid;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.tambah { 
+  position: relative;
+  /* z-index: 10; */
+  bottom: 5rem;width: auto;
+  height: 5rem;
+  background-color: rgb(255, 255, 255, 0);
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  a {
+    top: -10px;
+    font-size: 2rem;
+    color: white; 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(149deg, #34c8e8 0%, #4e4af2 100%); 
+    border-radius: 10px;
+    border: 1px rgba(255, 255, 255, 0.6) solid; 
+    i {
+      text-align: center;
+    }
+  }
+}
+
+/* STYLE AWAL BERANDA */
 
 /* Breakpoints */
 
