@@ -26,6 +26,10 @@
   font-family: var(--font-poppins-bold);
 }
 
+html, body {
+  height: 100%;
+}
+
 a {
   display: block;
   text-decoration: none;
@@ -46,7 +50,7 @@ div.container {
   position: relative;
   background-color: var(--warna-1);
   width: 600px;
-  height: 100vh;
+  height: -webkit-fill-available;
 }
 
 .section-absolute {
