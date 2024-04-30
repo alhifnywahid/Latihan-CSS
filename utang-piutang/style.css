@@ -1,95 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-/* 
-.poppins-thin {
-  font-weight: 100;
-  font-style: normal;
-}
-
-.poppins-thin-italic {
-  font-weight: 100;
-  font-style: italic;
-}
-
-.poppins-extralight {
-  font-weight: 200;
-  font-style: normal;
-}
-
-.poppins-extralight-italic {
-  font-weight: 200;
-  font-style: italic;
-}
-
-.poppins-light {
-  font-weight: 300;
-  font-style: normal;
-}
-
-.poppins-light-italic {
-  font-weight: 300;
-  font-style: italic;
-}
-
-.poppins-regular {
-  font-weight: 400;
-  font-style: normal;
-}
-
-.poppins-regular-italic {
-  font-weight: 400;
-  font-style: italic;
-}
-
-.poppins-medium {
-  font-weight: 500;
-  font-style: normal;
-}
-
-.poppins-medium-italic {
-  font-weight: 500;
-  font-style: italic;
-}
-
-.poppins-semibold {
-  font-weight: 600;
-  font-style: normal;
-}
-
-.poppins-semibold-italic {
-  font-weight: 600;
-  font-style: italic;
-}
-
-.poppins-bold {
-  font-weight: 700;
-  font-style: normal;
-}
-
-.poppins-bold-italic {
-  font-weight: 700;
-  font-style: italic;
-}
-
-.poppins-extrabold {
-  font-weight: 800;
-  font-style: normal;
-}
-
-.poppins-extrabold-italic {
-  font-weight: 800;
-  font-style: italic;
-}
-
-.poppins-black {
-  font-weight: 900;
-  font-style: normal;
-}
-
-.poppins-black-italic {
-  font-weight: 900;
-  font-style: italic;
-} */
 
 :root {
   --warna-1: #242c3b;
@@ -335,7 +245,7 @@ section.hutang {
   justify-content: start;
   align-items: center;
   flex-direction: column;
-  * {
+  * { 
     width: 100%;
   }
 }
@@ -345,13 +255,10 @@ section.hutang {
 }
 
 .inti-deskripsi {
+  padding-bottom: .4rem;
   font-weight: 600;
   font-size: large;
-}
-
-#hutang * {
-  /* border: 1px solid black; */
-}
+} 
 
 .hutang aside {
   height: 100%;
@@ -368,12 +275,12 @@ div.container-list {
 }
 
 div.container-list-item {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   background: linear-gradient(
     169deg,
     rgba(53.16, 63.01, 83.94, 0.6) 0%,
     rgba(33.62, 39.77, 52.06, 0.6) 100%
-  ); 
+  );
   border-radius: 0.7rem;
   border: 2px rgba(255, 255, 255, 0.2) solid;
   backdrop-filter: blur(100px);
@@ -383,7 +290,7 @@ div.container-list-item {
   }
 }
 
-.list-header { 
+.list-header {
   height: 4rem;
   display: flex;
   justify-content: space-around;
@@ -411,21 +318,21 @@ div.container-list-item {
 
 .tanggal {
   font-weight: 200;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 .container-rincian {
-  display: flex; 
-  gap: .4rem;
+  display: flex;
+  gap: 0.4rem;
   .container-jumlah,
   .container-dibayar,
-  .container-sisa { 
+  .container-sisa {
     border-radius: 10px;
     font-weight: 300;
-    font-size: .8rem;
-    padding: .5rem;
+    font-size: 0.8rem;
+    padding: 0.5rem;
     background: linear-gradient(327deg, #363e51 0%, #4c5770 100%);
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     border: 1px rgba(255, 255, 255, 0.2) solid;
     display: flex;
     justify-content: center;
@@ -434,10 +341,142 @@ div.container-list-item {
   }
 }
 
-.tambah { 
+.slider { 
+  width: 100%;
+  height: 100%;
+  background-color: rgba(192, 192, 192, 0);
+  backdrop-filter: blur(3px);
+  position: absolute;
+  z-index: -100;
+} 
+
+.slider-edit {
+  position: absolute;
+  bottom: 0;
+  height: 20rem;
+  padding: 1rem 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  background: linear-gradient(
+    169deg,
+    rgba(53.16, 63.01, 83.94, 0.8) 0%,
+    rgba(33.62, 39.77, 52.06, 0.8) 100%
+  );
+  border-radius: 1rem 1rem 0 0;
+  border: 2px rgba(255, 255, 255, 0.2) solid;
+  border-bottom: none;
+  backdrop-filter: blur(100px); 
+  /* transition: all 1s ease; */
+  .slider-judul {
+    /* height: 3rem; */
+    font-weight: 400;
+    font-size: 0.8rem;
+  } 
+
+  a {
+    font-weight: bold;
+    color: white;
+    padding: 1rem 1rem;
+    display: flex;
+    align-items: center;
+    column-gap: 0.6rem;
+    background: linear-gradient(327deg, #363e51 0%, #4c5770 100%);
+    border-radius: 0.5rem;
+    border: 1px rgba(255, 255, 255, 0.2) solid;
+    font-size: 0.9rem;
+    i {
+      width: 2rem;
+      font-size: 1.5rem;
+      color: var(--linier1-start);
+    }
+  }
+}
+
+
+section:target ~ #slider-hutang {
+  display: none;
+  z-index: -9999;
+}
+
+section:target ~ .input-data {
+  display: none;
+  z-index: -9999;
+}
+
+#slider-hutang:target {
+  z-index: 100;
+}
+
+.input-data:target { 
+  z-index: 9999;
+}
+
+section.input-data {
+  z-index: -100;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(192, 192, 192, 0);
+  backdrop-filter: blur(2px);
+}
+
+.container-perbarui {
+  position: absolute;
+  bottom: 0;
+  /* background-color: red; */
+  height: 23rem;
+  padding: 1rem 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  background: linear-gradient(
+    169deg,
+    rgba(53.16, 63.01, 83.94, 0.9) 0%,
+    rgba(33.62, 39.77, 52.06, 0.9) 100%
+  );
+  border-radius: 1rem 1rem 0 0;
+  border: 2px rgba(255, 255, 255, 0.2) solid;
+  border-bottom: none;
+  backdrop-filter: blur(100px);
+  label {
+    margin-bottom: .2rem;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    input, button {
+      border-radius: 3px;
+      margin-bottom: .6rem;
+      height: 2rem;
+      border: none;
+      outline: none;
+      padding: .4rem;
+    }
+    input {
+      font-weight: 400;
+    }
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: var(--font-poppins-bold);
+      font-weight: 600;
+      font-size: .9rem;
+      background: linear-gradient(149deg, #34c8e8 0%, #4e4af2 100%);
+      border: 1px rgba(255, 255, 255, 0.6) solid; 
+      color: rgb(233, 233, 233);
+    }
+  }
+}
+
+.tambah {
   position: relative;
   /* z-index: 10; */
-  bottom: 5rem;width: auto;
+  bottom: 5rem;
+  width: auto;
   height: 5rem;
   background-color: rgb(255, 255, 255, 0);
   display: flex;
@@ -446,15 +485,15 @@ div.container-list-item {
   a {
     top: -10px;
     font-size: 2rem;
-    color: white; 
+    color: white;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     width: 50px;
     height: 50px;
-    background: linear-gradient(149deg, #34c8e8 0%, #4e4af2 100%); 
+    background: linear-gradient(149deg, #34c8e8 0%, #4e4af2 100%);
     border-radius: 10px;
-    border: 1px rgba(255, 255, 255, 0.6) solid; 
+    border: 1px rgba(255, 255, 255, 0.6) solid;
     i {
       text-align: center;
     }
